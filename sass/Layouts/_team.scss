@@ -1,0 +1,49 @@
+.team {
+    position: relative;
+    background-color: $color-purple-2;
+    z-index: 1;
+
+    .row {
+        padding-top: $pd-3 + 0.5;
+        .col-3 {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .team__content {
+        z-index: 2;
+        text-align: center;
+        h5 {
+            @include styleText($color-purple-1, $fs-3, $fw-3);
+            margin-top: 10px;
+            margin-bottom: 0.7em;
+        }
+
+        h3 {
+            @include styleText($color-black-2, $fs-6, $fw-4);
+            margin-bottom: 1em;
+        }
+
+        p {
+            @include styleText($color-black-1, $fs-1 + 1, $fw-2 - 100);
+            font-family: $ff-roboto;
+            line-height: 1.8em;
+        }
+
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .bg__team__bottom {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+}

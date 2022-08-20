@@ -1,0 +1,25 @@
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin styleBGImage() {
+    background-image: linear-gradient($color-white-1, $color-white-1);
+    background-size: 0% 0%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+@mixin styleButton($bg, $radius, $border, $py, $px) {
+    background-color: $bg;
+    @include styleBGImage();
+    border-radius: $radius;
+    border: $border;
+    padding: $py $px;
+}
+
+@mixin styleButtonHover($bd-hover, $color-hover) {
+    border: $bd-hover;
+    color: $color-hover;
+}

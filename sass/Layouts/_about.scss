@@ -1,0 +1,15 @@
+.about {
+    h2 {
+        @include styleText($color-purple-1, $fs-5, $fw-3);
+    }
+
+    h1 {
+        @include styleText($color-black-2, $fs-8, $fw-4);
+    }
+    .bg__about__bottom {
+        position: absolute;
+        bottom: 0;
+    }
+
+    padding-bottom: $pd-3 + 2.5em;
+}

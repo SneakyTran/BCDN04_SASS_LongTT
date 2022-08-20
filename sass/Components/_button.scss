@@ -1,0 +1,40 @@
+.btnTabula {
+    position: relative;
+    z-index: 2;
+
+    @include styleButton(
+        $color-purple-1,
+        50px,
+        $color-purple-1 solid 1px,
+        $pd-2,
+        $pd-3
+    );
+    box-shadow: 0 0 0 1px #b61984 inset;
+    margin: 6px;
+
+    @include styleText($color-white-1, $fs-4, $fw-2);
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        @include styleText($color-purple-1, $fs-4, $fw-2);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: $color-white-1;
+        border-radius: 50px;
+        transition: all 0.2s ease;
+        transform: scaleX(0.7) scaleY(0);
+    }
+
+    &:hover::after {
+        transform: scale(1);
+    }
+}

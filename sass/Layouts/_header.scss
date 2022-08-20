@@ -1,0 +1,51 @@
+header {
+    position: relative;
+    .logo {
+        z-index: 2;
+        width: 30%;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .nav-link {
+        @include styleText($color-black-1, $fs-1 - 1, $fw-3);
+        line-height: 60px;
+    }
+
+    .header__content .navbar .nav-link {
+        padding-right: $pd-1;
+    }
+
+    .header__content .navbar .nav-item.last__item .nav-link {
+        padding-right: 0;
+    }
+
+    .header__contact {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 50px;
+        line-height: 1;
+        flex-shrink: 0;
+        .contact__icon i {
+            @include styleText($color-black-1, $fs-10, inherit);
+            transition: all 0.3s ease;
+            &:hover {
+                @include styleText($color-purple-1, $fs-10, inherit);
+            }
+        }
+        .contact__icon {
+            margin-left: 1em;
+        }
+    }
+
+    //Background Header
+    .bg__header__top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}

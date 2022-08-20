@@ -1,0 +1,151 @@
+.contact {
+    padding-top: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact__inner {
+        z-index: 3;
+        width: 1000px;
+        max-width: calc(100% + 40px);
+    }
+
+    .contact__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 -20px;
+    }
+
+    .contact__left{
+        width: 58.33%;
+    }
+
+    .contact__right{
+        width: 41.67%;
+    }
+
+    .contact__left,
+    .contact__right,
+    .contact__img {
+        padding: 0 20px;
+    }
+
+    .contact__img {
+        margin-top: 4em;
+        margin-bottom: 2em;
+    }
+
+    .contact__form {
+        padding: 40px 25px;
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+
+        h4 {
+            @include styleText($color-black-2, $fs-7, $fw-4);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+
+    .contact__row {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 1em;
+
+        .contact__name,
+        .contact__email {
+            flex: 1 0 50%;
+            max-width: 50%;
+            input {
+                width: 100%;
+            }
+        }
+
+        .contact__name {
+            padding-right: 1em;
+        }
+
+        .contact__mess,
+        .contact__course {
+            flex: 1 0 100%;
+            max-width: 100%;
+
+            textarea,
+            select {
+                width: 100%;
+            }
+        }
+
+        .contact__name,
+        .contact__email,
+        .contact__mess,
+        .contact__course {
+            position: relative;
+
+            input,
+            select {
+                border-radius: 50px;
+            }
+
+            textarea {
+                border-radius: 20px;
+            }
+
+            input,
+            select,
+            textarea {
+                padding: 1em 1em 1em 3.5em;
+                font-size: $fs-10 - 0.1;
+                height: 3.7em;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            textarea {
+                height: 90px;
+            }
+        }
+
+        i {
+            position: absolute;
+            color: $color-purple-1;
+            top: 1em;
+            left: 1em;
+            line-height: 0.8;
+        }
+
+        .contact__mess{
+            i{
+                line-height: 1.7;
+            }
+        }
+    }
+
+    .contact__submit{
+        max-width: 150px;
+        padding: 2em 0;
+        .btnTabula{
+            width: 100%;
+            @include styleText($color-white-1, $fs-10 - 0.1, $fw-3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding-top: .78em;
+            padding-bottom: .78em;
+            margin: 0;
+            &:hover{
+                @include styleText($color-purple-1, $fs-10 - 0.1, $fw-3);
+            }
+        }
+
+    }
+
+    .bg__contact__bottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
