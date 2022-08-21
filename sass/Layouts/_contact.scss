@@ -163,6 +163,7 @@
     }
 }
 
+/* ------------------------------- RESPONSIVE ------------------------------- */
 @include respMaxWidth("large") {
     body {
         font-size: $fs-1;

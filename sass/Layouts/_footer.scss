@@ -133,6 +133,7 @@ footer {
     }
 }
 
+/* ------------------------------- RESPONSIVE ------------------------------- */
 @include respMaxWidth("small") {
     .footer__inner {
         .footer__content {

@@ -151,6 +151,7 @@ header#myHeader {
   #myHeader a.nav-link:hover {
     color: #b61984; }
 
+/* ------------------------------- RESPONSIVE ------------------------------- */
 .about {
   padding-top: 60px;
   position: relative;
@@ -385,6 +386,7 @@ header#myHeader {
     left: 0;
     right: 0; }
 
+/* ------------------------------- RESPONSIVE ------------------------------- */
 @media screen and (max-width: 992px) {
   body {
     font-size: 14px; }
@@ -520,6 +522,7 @@ footer {
       font-size: 0.8em;
       font-weight: 600; }
 
+/* ------------------------------- RESPONSIVE ------------------------------- */
 @media screen and (max-width: 576px) {
   .footer__inner .footer__content .footer__item {
     margin-bottom: 80px; } }
