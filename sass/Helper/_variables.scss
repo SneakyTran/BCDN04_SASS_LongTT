@@ -32,3 +32,12 @@ $fw-4: 700;
 $pd-1: 50px;
 $pd-2: 1.1em;
 $pd-3: 1.5em;
+
+//break points
+$breakpoints: (
+    "extra-large": 1200px,
+    "large": 992px,
+    "medium": 768px,
+    "small": 576px,
+    "extra-small": 360px,
+);

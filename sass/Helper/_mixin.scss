@@ -23,3 +23,37 @@
     border: $bd-hover;
     color: $color-hover;
 }
+
+@mixin respMaxWidth($screen) {
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+    }
+}
+
+@mixin respBetw($min, $max) {
+    @if (
+        map-has-key($map: $breakpoints, $key: $min)
+            &&
+            map-has-key($map: $breakpoints, $key: $max)
+    ) {
+        $minVal: map-get(
+            $map: $breakpoints,
+            $key: $min,
+        );
+        $maxVal: map-get(
+            $map: $breakpoints,
+            $key: $max,
+        );
+        @media screen and (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else {
+    }
+}

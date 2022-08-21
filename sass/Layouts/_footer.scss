@@ -62,6 +62,10 @@ footer {
 
         a {
             @include styleText($color-white-1, $fs-9 + 0.1, inherit);
+            transition: all 0.3s ease;
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
 
@@ -76,6 +80,10 @@ footer {
         i {
             font-size: $fs-4;
             line-height: 1;
+            transition: all 0.3s ease;
+            &:hover {
+                color: $color-black-2;
+            }
         }
     }
 
@@ -89,8 +97,14 @@ footer {
         width: 100%;
         background-color: transparent;
         padding: 1em;
+        margin-bottom: 0.5em;
         text-align: center;
         caret-color: $color-white-1;
+        transition: all 0.3s ease;
+        &:focus {
+            outline: none;
+            border: 1px solid $color-white-1;
+        }
     }
 
     ::-webkit-input-placeholder {
@@ -115,6 +129,16 @@ footer {
         }
         &:hover {
             @include styleText($color-white-1, $fs-10 - 0.1, $fw-3);
+        }
+    }
+}
+
+@include respMaxWidth("small") {
+    .footer__inner {
+        .footer__content {
+            .footer__item {
+                margin-bottom: 80px;
+            }
         }
     }
 }

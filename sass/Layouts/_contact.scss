@@ -162,3 +162,56 @@
         right: 0;
     }
 }
+
+@include respMaxWidth("large") {
+    body {
+        font-size: $fs-1;
+    }
+    .contact {
+        .contact__content {
+            display: block;
+        }
+        .contact__left,
+        .contact__right {
+            width: 100%;
+        }
+
+        .contact__right {
+            padding: 0 50px;
+        }
+        .contact__form {
+            h4 {
+                font-size: $fs-7 - 0.5;
+            }
+            input,
+            select,
+            textarea {
+                font-size: $fs-10 - 0.1;
+            }
+        }
+    }
+}
+
+@include respMaxWidth("extra-small") {
+    body {
+        font-size: $fs-1 - 1;
+    }
+}
+
+@include respMaxWidth("medium") {
+    .contact {
+        .contact__row {
+            display: block;
+            .contact__name,
+            .contact__email {
+                max-width: 100%;
+            }
+            .contact__name {
+                padding-bottom: $pd-2 - 0.1;
+            }
+        }
+        .contact__submit {
+            max-width: 100%;
+        }
+    }
+}

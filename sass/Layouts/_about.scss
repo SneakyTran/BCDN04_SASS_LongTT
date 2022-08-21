@@ -16,3 +16,27 @@
 
     padding-bottom: $pd-3 + 2.5em;
 }
+
+/* ------------------------------- RESPONSIVE ------------------------------- */
+@include respMaxWidth("large") {
+    .about {
+        padding-top: 110px;
+        h2 {
+            font-size: $fs-5 - 0.1;
+        }
+        h1 {
+            font-size: $fs-7 + 0.65;
+        }
+    }
+}
+
+@include respMaxWidth("extra-small") {
+    .about {
+        h2 {
+            font-size: $fs-4 + 0.05;
+        }
+        h1 {
+            font-size: $fs-7;
+        }
+    }
+}
