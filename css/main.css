@@ -25,6 +25,9 @@ body {
 a:hover {
   text-decoration: none; }
 
+ul, li {
+  list-style-type: none; }
+
 .btnTabula {
   position: relative;
   z-index: 2;
@@ -35,7 +38,7 @@ a:hover {
   background-position: 50% 50%;
   border-radius: 50px;
   border: #b61984 solid 1px;
-  padding: 1.1em 1.5em;
+  padding: 1.05em 1.45em;
   box-shadow: 0 0 0 1px #b61984 inset;
   margin: 6px;
   color: #ffffff;
@@ -62,48 +65,71 @@ a:hover {
   .btnTabula:hover::after {
     transform: scale(1); }
 
-header {
-  position: relative; }
-  header .logo {
+header#myHeader {
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+  transition: all 0.3s ease; }
+  header#myHeader .logo {
     z-index: 2;
-    width: 30%; }
-    header .logo img {
+    flex: 1 0 29.4%; }
+    header#myHeader .logo img {
       width: 80px;
       height: 80px; }
-  header .nav-link {
+  header#myHeader .nav-link {
     color: #181818;
     font-size: 13px;
     font-weight: 600;
     line-height: 60px; }
-  header .header__content .navbar .nav-link {
+  header#myHeader .header__content {
+    z-index: 2; }
+  header#myHeader .header__content .navbar .nav-link {
     padding-right: 50px; }
-  header .header__content .navbar .nav-item.last__item .nav-link {
+  header#myHeader .header__content .navbar .nav-item.last__item .nav-link {
     padding-right: 0; }
-  header .header__contact {
+  header#myHeader .header__contact {
     display: flex;
     align-items: center;
     vertical-align: middle;
     margin-left: 50px;
     line-height: 1;
     flex-shrink: 0; }
-    header .header__contact .contact__icon i {
+    header#myHeader .header__contact .btnTabula i {
+      padding-right: 0.2rem; }
+    header#myHeader .header__contact .contact__icon i {
       color: #181818;
       font-size: 0.9em;
       font-weight: inherit;
       transition: all 0.3s ease; }
-      header .header__contact .contact__icon i:hover {
+      header#myHeader .header__contact .contact__icon i:hover {
         color: #b61984;
         font-size: 0.9em;
         font-weight: inherit; }
-    header .header__contact .contact__icon {
-      margin-left: 1em; }
-  header .bg__header__top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; }
+    header#myHeader .header__contact .contact__icon {
+      margin-left: 0.8em; }
+
+.bg__header__top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3; }
+
+#myHeader.active .logo {
+  display: none; }
+#myHeader.active .header__inner {
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px 0 rgba(204, 204, 204, 0.5); }
+#myHeader.active .header__content {
+  justify-content: end; }
+#myHeader.active .btnTabula {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em; }
+#myHeader.active li a {
+  line-height: 48px; }
 
 .about {
+  padding-top: 60px;
+  position: relative;
   padding-bottom: 4em; }
   .about h2 {
     color: #b61984;
@@ -128,6 +154,13 @@ header {
       padding-right: 20px; }
   .team .card {
     border-radius: 10px; }
+    .team .card .card-image {
+      overflow: hidden;
+      background-color: transparent; }
+    .team .card img {
+      transition: all 1s ease; }
+    .team .card img:hover {
+      transform: scale(1.05); }
   .team .team__content {
     z-index: 2;
     text-align: center;
@@ -251,6 +284,34 @@ header {
         font-size: 0.8em;
         height: 3.7em;
         border: 1px solid rgba(0, 0, 0, 0.1); }
+      .contact .contact__row .contact__name input,
+      .contact .contact__row .contact__name textarea,
+      .contact .contact__row .contact__name select,
+      .contact .contact__row .contact__email input,
+      .contact .contact__row .contact__email textarea,
+      .contact .contact__row .contact__email select,
+      .contact .contact__row .contact__mess input,
+      .contact .contact__row .contact__mess textarea,
+      .contact .contact__row .contact__mess select,
+      .contact .contact__row .contact__course input,
+      .contact .contact__row .contact__course textarea,
+      .contact .contact__row .contact__course select {
+        transition: all 0.5s ease; }
+      .contact .contact__row .contact__name input:focus,
+      .contact .contact__row .contact__name textarea:focus,
+      .contact .contact__row .contact__name select:focus,
+      .contact .contact__row .contact__email input:focus,
+      .contact .contact__row .contact__email textarea:focus,
+      .contact .contact__row .contact__email select:focus,
+      .contact .contact__row .contact__mess input:focus,
+      .contact .contact__row .contact__mess textarea:focus,
+      .contact .contact__row .contact__mess select:focus,
+      .contact .contact__row .contact__course input:focus,
+      .contact .contact__row .contact__course textarea:focus,
+      .contact .contact__row .contact__course select:focus {
+        outline: none !important;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1); }
       .contact .contact__row .contact__name textarea,
       .contact .contact__row .contact__email textarea,
       .contact .contact__row .contact__mess textarea,
@@ -274,8 +335,8 @@ header {
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      padding-top: .78em;
-      padding-bottom: .78em;
+      padding-top: 0.78em;
+      padding-bottom: 0.78em;
       margin: 0; }
       .contact .contact__submit .btnTabula:hover {
         color: #b61984;
@@ -286,5 +347,99 @@ header {
     bottom: 0;
     left: 0;
     right: 0; }
+
+footer {
+  background-image: url("../../img/footer_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  footer .container {
+    max-width: 1280px;
+    padding-left: 0;
+    padding-right: 0; }
+  footer .row {
+    margin-left: 0;
+    margin-right: 0; }
+  footer .col-3 {
+    padding-left: 40px;
+    padding-right: 40px; }
+  footer .footer__inner {
+    padding: 8em 0; }
+  footer .footer__item header {
+    margin-bottom: 2em; }
+  footer .footer__item h5 {
+    color: #ffffff;
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2; }
+  footer .footer__item ul {
+    margin-bottom: 0; }
+  footer .footer__item li {
+    font-family: "Roboto", sans-serif;
+    padding-bottom: 1em; }
+    footer .footer__item li span {
+      display: flex;
+      align-items: center; }
+      footer .footer__item li span i {
+        font-size: 0.9rem;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        color: #ffffff; }
+      footer .footer__item li span span {
+        padding-left: 0.8em;
+        color: #ffffff;
+        font-size: 0.9em;
+        font-weight: normal;
+        line-height: 1; }
+  footer .footer__item a {
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: inherit; }
+  footer .footer__social {
+    padding-top: 0.7em;
+    margin-bottom: 80px; }
+  footer .footer__social a {
+    color: #ffffff;
+    padding-right: 1em; }
+    footer .footer__social a i {
+      font-size: 0.9rem;
+      line-height: 1; }
+  footer .header__email {
+    margin-bottom: 45px; }
+  footer input {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    width: 100%;
+    background-color: transparent;
+    padding: 1em;
+    text-align: center;
+    caret-color: #ffffff; }
+  footer ::-webkit-input-placeholder {
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    line-height: 1;
+    text-align: center; }
+  footer .btnTabula {
+    margin: 0;
+    width: 100%;
+    padding: 0.8em 0;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    letter-spacing: 1px;
+    border: 1px solid #ffffff;
+    box-shadow: none;
+    color: #181818;
+    font-size: 0.8em;
+    font-weight: 600; }
+    footer .btnTabula::after {
+      background-color: #b61984; }
+    footer .btnTabula:hover {
+      color: #ffffff;
+      font-size: 0.8em;
+      font-weight: 600; }
 
 /*# sourceMappingURL=main.css.map */

@@ -6,8 +6,8 @@
         $color-purple-1,
         50px,
         $color-purple-1 solid 1px,
-        $pd-2,
-        $pd-3
+        $pd-2 - 0.05,
+        $pd-3 - 0.05
     );
     box-shadow: 0 0 0 1px #b61984 inset;
     margin: 6px;

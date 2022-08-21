@@ -1,3 +1,120 @@
-footer{
-    
+footer {
+    background-image: url("../../img/footer_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .container {
+        max-width: 1280px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-3 {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .footer__inner {
+        padding: 8em 0;
+    }
+
+    .footer__item {
+        header {
+            margin-bottom: 2em;
+        }
+        h5 {
+            @include styleText($color-white-1, $fs-6, $fw-4);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        ul {
+            margin-bottom: 0;
+        }
+
+        li {
+            font-family: $ff-roboto;
+            padding-bottom: 1em;
+            span {
+                display: flex;
+                align-items: center;
+                i {
+                    font-size: $fs-4;
+                    width: 15px;
+                    height: 15px;
+                    line-height: 15px;
+                    color: $color-white-1;
+                }
+
+                span {
+                    padding-left: $pd-2 - 0.3em;
+                    @include styleText($color-white-1, $fs-10, normal);
+                    line-height: 1;
+                }
+            }
+        }
+
+        a {
+            @include styleText($color-white-1, $fs-9 + 0.1, inherit);
+        }
+    }
+
+    .footer__social {
+        padding-top: $pd-2 - 0.4em;
+        margin-bottom: 80px;
+    }
+
+    .footer__social a {
+        color: $color-white-1;
+        padding-right: $pd-2 - 0.1em;
+        i {
+            font-size: $fs-4;
+            line-height: 1;
+        }
+    }
+
+    .header__email {
+        margin-bottom: 45px;
+    }
+
+    input {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        width: 100%;
+        background-color: transparent;
+        padding: 1em;
+        text-align: center;
+        caret-color: $color-white-1;
+    }
+
+    ::-webkit-input-placeholder {
+        @include styleText($color-white-1, $fs-10, 400);
+        font-family: $ff-roboto;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .btnTabula {
+        margin: 0;
+        width: 100%;
+        padding: 0.8em 0;
+        text-transform: uppercase;
+        background-color: $color-white-1;
+        letter-spacing: 1px;
+        border: 1px solid $color-white-1;
+        box-shadow: none;
+        @include styleText($color-black-1, $fs-10 - 0.1, $fw-3);
+        &::after {
+            background-color: $color-purple-1;
+        }
+        &:hover {
+            @include styleText($color-white-1, $fs-10 - 0.1, $fw-3);
+        }
+    }
 }

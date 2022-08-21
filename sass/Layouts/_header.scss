@@ -1,8 +1,12 @@
-header {
-    position: relative;
+header#myHeader {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    transition: all 0.3s ease;
+
     .logo {
         z-index: 2;
-        width: 30%;
+        flex: 1 0 29.4%;
         img {
             width: 80px;
             height: 80px;
@@ -14,6 +18,10 @@ header {
         line-height: 60px;
     }
 
+    .header__content {
+        z-index: 2;
+    }
+
     .header__content .navbar .nav-link {
         padding-right: $pd-1;
     }
@@ -23,12 +31,20 @@ header {
     }
 
     .header__contact {
+        // flex: 1 0 50%;
         display: flex;
         align-items: center;
         vertical-align: middle;
         margin-left: 50px;
         line-height: 1;
         flex-shrink: 0;
+
+        .btnTabula {
+            i {
+                padding-right: 0.2rem;
+            }
+        }
+
         .contact__icon i {
             @include styleText($color-black-1, $fs-10, inherit);
             transition: all 0.3s ease;
@@ -37,15 +53,40 @@ header {
             }
         }
         .contact__icon {
-            margin-left: 1em;
+            margin-left: 0.8em;
         }
     }
 
     //Background Header
-    .bg__header__top {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+}
+
+.bg__header__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+
+#myHeader.active {
+    .logo {
+        display: none;
+    }
+
+    .header__inner {
+        background-color: $color-white-1;
+        box-shadow: 0 3px 6px 0 rgba(204, 204, 204, 0.5);
+    }
+
+    .header__content {
+        justify-content: end;
+    }
+
+    .btnTabula {
+        padding-top: $pd-2 - 0.3;
+        padding-bottom: $pd-2 - 0.3;
+    }
+
+    li a {
+        line-height: 48px;
     }
 }

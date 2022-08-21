@@ -18,11 +18,11 @@
         margin: 0 -20px;
     }
 
-    .contact__left{
+    .contact__left {
         width: 58.33%;
     }
 
-    .contact__right{
+    .contact__right {
         width: 41.67%;
     }
 
@@ -104,6 +104,20 @@
                 border: 1px solid rgba(0, 0, 0, 0.1);
             }
 
+            input,
+            textarea,
+            select {
+                transition: all 0.5s ease;
+            }
+
+            input:focus,
+            textarea:focus,
+            select:focus {
+                outline: none !important;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+            }
+
             textarea {
                 height: 90px;
             }
@@ -117,32 +131,31 @@
             line-height: 0.8;
         }
 
-        .contact__mess{
-            i{
+        .contact__mess {
+            i {
                 line-height: 1.7;
             }
         }
     }
 
-    .contact__submit{
+    .contact__submit {
         max-width: 150px;
         padding: 2em 0;
-        .btnTabula{
+        .btnTabula {
             width: 100%;
             @include styleText($color-white-1, $fs-10 - 0.1, $fw-3);
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding-top: .78em;
-            padding-bottom: .78em;
+            padding-top: 0.78em;
+            padding-bottom: 0.78em;
             margin: 0;
-            &:hover{
+            &:hover {
                 @include styleText($color-purple-1, $fs-10 - 0.1, $fw-3);
             }
         }
-
     }
 
-    .bg__contact__bottom{
+    .bg__contact__bottom {
         position: absolute;
         bottom: 0;
         left: 0;

@@ -13,6 +13,16 @@
 
     .card {
         border-radius: 10px;
+        .card-image {
+            overflow: hidden;
+            background-color: transparent;
+        }
+        img {
+            transition: all 1s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
     }
 
     .team__content {
