@@ -90,3 +90,28 @@ header#myHeader {
         line-height: 48px;
     }
 }
+
+#myHeader {
+    a.active--menu {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            margin-left: -4px;
+            left: 25%;
+            pointer-events: none;
+
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $color-purple-1;
+            transition: all 0.3s ease;
+        }
+
+        &:hover::after {
+            transform: scale(1.5);
+        }
+    }
+}

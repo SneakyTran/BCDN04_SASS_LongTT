@@ -127,6 +127,24 @@ header#myHeader {
 #myHeader.active li a {
   line-height: 48px; }
 
+#myHeader a.active--menu {
+  position: relative; }
+  #myHeader a.active--menu::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    margin-left: -4px;
+    left: 25%;
+    pointer-events: none;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #b61984;
+    transition: all 0.3s ease; }
+  #myHeader a.active--menu:hover::after {
+    transform: scale(1.5); }
+
 .about {
   padding-top: 60px;
   position: relative;
